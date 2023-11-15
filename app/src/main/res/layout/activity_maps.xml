@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    tools:context="com.parking.linkandpark.MapsActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.parking.linkandpark.MapsActivity" />
+
+<!--    Name and Settings Banner at top-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nameSettingsCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="3dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_alignParentTop="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/welcome_name"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:textColor="@color/LU_blue"/>
+
+            <TextView
+                android:id="@+id/adminText"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/admin"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:visibility="invisible"
+                android:layout_toStartOf="@id/settingsButton"
+                android:fontFamily="@font/dm_sans"
+                android:textColor="@color/LU_blue"/>
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/settings_button_background"
+                android:fontFamily="@font/dm_sans"
+                android:text="@string/settings"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="@color/LU_yellow" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+<!--    Admin Information Banner-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/adminBannerCardView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/speedAdminTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/current_speed_xx_m_s"
+                android:fontFamily="@font/dm_sans"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/movingStatusTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/speedAdminTextView"
+                android:text="@string/stopped"
+                android:fontFamily="@font/dm_sans"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="18sp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+<!--    Legend banner at the bottom-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layoutTop"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/redSpot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/red_rounded_rectangle" />
+
+                <TextView
+                    android:id="@+id/takenView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@id/redSpot"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingStart="5dp"
+                    android:text="@string/occupied"
+                    android:textColor="@color/grey_fromImage"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/greenSpot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/takenView"
+                    android:background="@drawable/green_rounded_rectangle"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/availableView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@id/greenSpot"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingStart="5dp"
+                    android:text="@string/available"
+                    android:textColor="@color/grey_fromImage"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/blueSpot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/availableView"
+                    android:background="@drawable/blue_rounded_rectangle"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/yourView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/blueSpot"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingStart="5dp"
+                    android:text="@string/your_car"
+                    android:textColor="@color/grey_fromImage"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/evSpot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="50dp"
+                    android:background="@drawable/ev_rounded_rectangle" />
+
+                <TextView
+                    android:id="@+id/ev_parkingTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@id/evSpot"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingStart="5dp"
+                    android:text="@string/ev_parking"
+                    android:textColor="@color/grey_fromImage"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/meterColourSpot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/ev_parkingTextView"
+                    android:background="@drawable/meter_rounded_rectangle"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/meter_parkingTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@id/meterColourSpot"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:paddingStart="5dp"
+                    android:text="@string/meter_parking"
+                    android:textColor="@color/grey_fromImage"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/findMyCarButton"
+        android:layout_above="@+id/legend"
+        android:layout_centerHorizontal="true"
+        android:text="@string/recenter"
+        android:textSize="16sp"
+        android:fontFamily="@font/dm_sans"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/LU_yellow"
+        android:visibility="invisible"
+        android:background="@drawable/settings_button_background"
+        />
+</RelativeLayout>

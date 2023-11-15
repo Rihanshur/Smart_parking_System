@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:visibility="visible"
+    tools:context="com.parking.linkandpark.LoginActivity"
+    android:screenOrientation="portrait"
+    tools:visibility="visible">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:alpha="0.9"
+        android:src="@drawable/parking_lines" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="@string/login"
+                android:textColor="@color/grey_fromImage"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/messageLoginTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginText"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="18dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="@string/please_login_to_continue"
+                android:textAlignment="textStart"
+                android:textColor="@color/grey"
+                android:textColorLink="@color/LU_blue"
+                android:textSize="15sp"/>
+
+            <!-- Username Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/messageLoginTextView"
+                android:layout_gravity="top"
+                android:layout_marginHorizontal="18dp"
+                app:errorEnabled="true"
+                app:startIconDrawable="@drawable/baseline_person_outline_24"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameTextInputEditText"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans"
+                    android:hint="@string/username"
+                    android:inputType="textPersonName"
+                    android:textSize="17sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usernameTextInputLayout"
+                android:layout_gravity="top"
+                android:layout_marginHorizontal="18dp"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:startIconDrawable="@android:drawable/ic_secure">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordTextInputEditText"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans"
+                    android:hint="@string/password"
+                    android:imeOptions="actionGo"
+                    android:inputType="textPassword"
+                    android:textSize="17sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:layout_below="@id/passwordTextInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="18dp"
+                android:enabled="false"
+                android:fontFamily="@font/dm_sans"
+                android:text="@string/sign_in"
+                android:textSize="20sp"
+                android:layout_gravity="top"/>
+
+            <TextView
+                android:id="@+id/registerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="@string/don_t_have_an_account_register_here"
+                android:textAlignment="center"
+                android:textColor="@color/grey_fromImage"
+                android:textColorLink="@color/LU_blue"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</android.widget.RelativeLayout>

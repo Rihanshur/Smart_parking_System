@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Link &amp; Park</string>
+    <string name="title_activity_maps">Link &amp; Park</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="register">REGISTER</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="name">Display Name</string>
+    <string name="filename">Filename</string>
+    <string name="permit_number">Permit Number (Optional)</string>
+    <string name="permitNumber">Permit Number</string>
+    <string name="already_have_an_account_login_here">Already have an account? Login here</string>
+    <string name="lu_logo">LU Logo</string>
+    <string name="update">Update</string>
+    <string name="go_to_admin_screen">Go To Admin Screen</string>
+    <string name="go_to_user_screen">Go To User Screen</string>
+    <string name="logout">Logout</string>
+    <string name="back">Back</string>
+    <string name="settings">Settings</string>
+    <string name="welcome_to_easier_parking">Welcome to Easier Parking</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="don_t_have_an_account_register_here">Don\'t have an account? Register here</string>
+    <string name="tap_your_name_or_permit_number_to_change">Tap your name or permit number to change</string>
+    <string name="save">Save</string>
+
+    <string-array name="filter">
+        <item>Unavailable Spot</item>
+        <item>Available Spot</item>
+        <item>Your Spot</item>
+    </string-array>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="refresh">Refresh Location</string>
+    <string name="latitude_longitude">Latitude: \nLongitude:</string>
+    <string name="admin_mode">Admin Panel</string>
+    <string name="login">Login</string>
+    <string name="please_login_to_continue">Please login to continue</string>
+    <string name="create_account">Create Account</string>
+    <string name="register2">Register</string>
+    <string name="create_an_account_to_continue">Create an account to continue</string>
+    <string name="current_speed_xx_m_s">0.000000 m/s</string>
+    <string name="stopped">Stopped</string>
+    <string name="admin">ADMIN</string>
+    <string name="welcome_name">Welcome</string>
+    <string name="your_car">Your Car</string>
+    <string name="available">Available</string>
+    <string name="occupied">Occupied</string>
+    <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
+    <string name="recenter">Go To Car</string>
+    <string name="meter_parking">Meter Parking</string>
+    <string name="ev_parking">EV Parking</string>
+    <string name="activity_in_vehicle">In Vehicle</string>
+    <string name="activity_on_bicycle">On Bicycle</string>
+    <string name="activity_on_foot">On Foot</string>
+    <string name="activity_running">Running</string>
+    <string name="activity_still">Still</string>
+    <string name="activity_tilting">Tilting</string>
+    <string name="activity_walking">Walking</string>
+    <string name="activity_unknown">Unknown</string>
+    <string name="main_message_activity_permission_rational">View available parking spaces by letting us access your devices location and read your phone\'s activity transitions.</string>
+    <string name="details_message_activity_permission_rational">This app\'s experience requires access to your phone\'s activity transitions to accurately determine if you have parked in a parking space or not. Furthermore, in order to determine which parking space you have parked in, we require your precise location while in the foreground and background.</string>
+    <string name="no_thanks_activity_permission_rational">No Thanks</string>
+    <string name="continue_activity_permission_rational">Continue</string>
+</resources>

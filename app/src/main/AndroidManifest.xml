@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_new_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_new_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GPSApp"
+        android:screenOrientation="portrait"
+        tools:targetApi="31">
+        <activity
+            android:name="com.parking.linkandpark.eulaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GPSApp.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.parking.linkandpark.PermissionRationalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GPSApp.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.parking.linkandpark.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.parking.linkandpark.AdminActivity"
+            android:exported="false"
+            android:parentActivityName="com.parking.linkandpark.InfoActivity"
+            android:theme="@style/Theme.GPSApp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.parking.linkandpark.RegisterActivity"
+            android:exported="false"
+            android:parentActivityName="com.parking.linkandpark.LoginActivity"
+            android:finishOnTaskLaunch="true"
+            android:theme="@style/Theme.GPSApp.NoActionBar"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.parking.linkandpark.LoginActivity"
+            android:exported="true"
+            android:parentActivityName="com.parking.linkandpark.LoginActivity"
+            android:finishOnTaskLaunch="true"
+            android:theme="@style/Theme.GPSApp.NoActionBar"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.parking.linkandpark.InfoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_info"
+            android:parentActivityName="com.parking.linkandpark.MapsActivity"
+            android:theme="@style/Theme.GPSApp"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDjyaS3qRdQdNB890niZywMz2XnVHOrfOo" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.parking.linkandpark.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps"
+            android:parentActivityName="com.parking.linkandpark.MapsActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.parking.linkandpark.AdminLocationService" android:foregroundServiceType="location"/>
+        <service android:name="com.parking.linkandpark.MapsLocationService" android:foregroundServiceType="location"/>
+
+    </application>
+
+</manifest>

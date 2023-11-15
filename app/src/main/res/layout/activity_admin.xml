@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25sp"
+    android:screenOrientation="portrait"
+    tools:context="com.parking.linkandpark.AdminActivity">
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginTop="60sp"
+        android:text="@string/latitude_longitude"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="@color/LU_blue"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationTextView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/refresh" />
+
+    <!-- Filename Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/filenameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refreshButton"
+        android:hint="@string/filename"
+        android:layout_marginBottom="10sp"
+        android:layout_marginTop="10sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/filenameTextInputEditText"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:fontFamily="@font/dm_sans"
+            android:textSize="17sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filenameInputLayout"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/honey_yellow"
+            android:text="@string/save"
+            android:fontFamily="@font/dm_sans"
+            android:enabled="false" />
+
+        <Button
+            android:id="@+id/startTrackingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#7CB342"
+            android:text="@string/start_tracking"
+            android:fontFamily="@font/dm_sans"
+            android:enabled="true" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/consoleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="15sp"
+        android:layout_below="@id/buttonLinLayout"
+        android:text=""
+        android:fontFamily="@font/dm_sans"
+        android:textColor="@color/LU_blue"
+        android:textAlignment="center"
+        android:scrollbars = "vertical"/>
+
+
+</android.widget.RelativeLayout>
